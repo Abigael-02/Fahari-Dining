@@ -21,6 +21,17 @@
     <main class="container">
         <section class="admin-panel">
             <h2>Add New Menu Item</h2>
+            <form id="menu-form">
+                <input type="text" id="itemName" placeholder="Dish Name" required>
+                <input type="number" id="itemPrice" placeholder="Price ($)" step="0.01" required>
+                <select id="itemCatergory">
+                    <option value="Main">Main Course</option>
+                    <option value="Starter">Starter</option>
+                    <option value="Drink">Drink</option>
+                </select>
+                <button type="submit" class="btn">Add to Live Menu</button>
+
+            </form>
         </section>
     </main>
     
