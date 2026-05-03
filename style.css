@@ -1,170 +1,189 @@
 /* root variables for consistent design  */
 :root {
-    --primary-bg: #1a1a1a;
-    --secondary-bg: #2d2d2d;
-    --accent:#d4af37;
-    --text-main:#ffffff;
-    --text-dim: #b3b3b3;
-    --error: #ff4d4d;
-    --success: #2ecc71;
+  --primary-bg: #1a1a1a;
+  --secondary-bg: #2d2d2d;
+  --accent: #d4af37;
+  --text-main: #ffffff;
+  --text-dim: #b3b3b3;
+  --error: #ff4d4d;
+  --success: #2ecc71;
 }
 
- /* Base Styles */
- * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
- }
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
- body {
-    font-family: 'Segoe UI', Roboto, Arial, Helvetica, sans-serif;
-    background-color: var(--primary-bg);
-    color: var(--text-main);
-    line-height: 1.6;
- }
+body {
+  font-family: "Segoe UI", Roboto, Arial, Helvetica, sans-serif;
+  background-color: var(--primary-bg);
+  color: var(--text-main);
+  line-height: 1.6;
+}
 
- header {
-    background-color: rgba(0, 0, 0, 0.9);
-    padding: 1.5rem 5%;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
- }
+header {
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 1.5rem 5%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
 
- nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
- }
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
- .logo {
-    font-size: 1.8rem;
-    font-weight: bold;
-    letter-spacing: 2px;
-    color: var(--accent);
- }
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: var(--accent);
+}
 
- nav ul {
-    display: flex;
-    list-style: none;
- }
+nav ul {
+  display: flex;
+  list-style: none;
+}
 
- nav ul li {
-    margin-left: 2rem;
- }
+nav ul li {
+  margin-left: 2rem;
+}
 
- nav a {
-    color: var(--text-main);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
- }
+nav a {
+  color: var(--text-main);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
 
- nav a:hover, .active {
-    color: var(--accent)
- }
+nav a:hover,
+.active {
+  color: var(--accent);
+}
 
- /* Layout Containers  */
- .container, .order-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem 5%;
- }
+/* Layout Containers  */
+.container,
+.order-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 5%;
+}
 
- /* Hero Section  */
- .hero {
-    height: 80vh;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6));
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Hero Section  */
+.hero {
+  height: 80vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  color: var(--accent);
+}
+
+/* Menu Grid  */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.menu-card {
+  background-color: var(--secondary-bg);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border-left: 4px solid var(--accent);
+  transition: transform 0.3s ease;
+}
+
+.menu-card:hover {
+  transform: translateY(-10px);
+}
+
+/* Ordering page Layout  */
+.order-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+}
+
+.cart-section {
+  background-color: #000;
+  padding: 2rem;
+  border-radius: 12px;
+  height: fit-content;
+  position: sticky;
+  top: 100px;
+}
+
+/* Form Elements  */
+input,
+select {
+  width: 100%;
+  padding: 0.8rem;
+  margin: 0.5rem 0 1.5rem 0;
+  background-color: #333;
+  border: 1px solid #444;
+  color: white;
+  border-radius: 4px;
+}
+
+.btn {
+  background-color: var(--accent);
+  color: black;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background-color: #b8962e;
+}
+
+/* Responsive Media Queries  */
+@media (max-width: 992px) {
+  .order-container {
+    grid-template-columns: 1fr;
+  }
+
+  .cart-section {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  nav {
+    flex-direction: column;
+  }
+
+  nav ul {
+    margin-top: 1rem;
+  }
+}
+
+footer {
     text-align: center;
- }
-
- .hero h1 {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-    color: var(--accent);
- }
-
- /* Menu Grid  */
- .menu-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
- }
-
- .menu-card {
-    background-color:  var(--secondary-bg);
-    padding: 1.5rem;
-    border-radius: 12px;
-    border-left: 4px solid var(--accent);
-    transition: transform 0.3s ease;
- }
-
- .menu-card:hover {
-    transform: translateY(-10px);
- }
-
- /* Ordering page Layout  */
- .order-container {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 3rem;
- }
-
- .cart-section {
+    padding: 3rem;
     background-color: #000;
-    padding: 2rem;
-    border-radius: 12px;
-    height: fit-content;
-    position: sticky;
-    top: 100px;
- }
-
- /* Form Elements  */
- input, select {
-    width: 100%;
-    padding: 0.8rem;
-    margin: 0.5rem 0 1.5rem 0;
-    background-color: #333;
-    border: 1px solid #444;
-    color: white;
-    border-radius: 4px;
- }
-
- .btn {
-    background-color: var(--accent);
-    color: black;
-    padding: 0.8rem 2rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-    text-transform: uppercase;
-    transition: background 0.3s;
- }
-
- .btn:hover {
-    background-color: #b8962e;
- }
-
- /* Responsive Media Queries  */
- @media (max-width: 992px) {
-    .order-container {
-        grid-template-columns: 1fr;
-    }
-
-    .cart-section {
-        position: static;
-    }
- }
-
- @media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2.5rem;
-    }
- }
+    color: var(--text-dim);
+    margin-top: 4rem;
+}
