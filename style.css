@@ -96,3 +96,11 @@
     gap: 2rem;
     margin-top: 2rem;
  }
+
+ .menu-card {
+    background-color:  var(--secondary-bg);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border-left: 4px solid var(--accent);
+    transition: transform 0.3s ease;
+ }
