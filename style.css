@@ -147,3 +147,9 @@
     text-transform: uppercase;
     transition: background 0.3s;
  }
+
+ .btn:hover {
+    background-color: #b8962e;
+ }
+
+ /* Responsive Media Queries  */
