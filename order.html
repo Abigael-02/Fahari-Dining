@@ -26,6 +26,27 @@
             <!-- Items injected here from localStorage via script.js -->
              <div id="dynamic-menu" class="menu-grid"></div>
         </section>
+
+        <!-- sidebar for cart interaction -->
+         <aside class="cart-section">
+            <h3>Your Order</h3>
+            <div id="cart-items">
+            </div>
+            <div class="cart-total">
+                <strong>Total: $<span id="total-price">0.00</span></strong>
+            </div>
+                
+            <!-- Checkout Form for Orders -->
+             <form id="checkout-form">
+                    <div class="field">
+                    <label for="customerName">Name for Pickup</label>
+                    <input type="text" id="customerName" placeHolder=" Enter your Name" required>
+                  </div>
+                    <button type="submit" class="btn checkout">Place Order</button>
+                </form>
+                
+            
+         </aside>
      </main>
     
 </body>
