@@ -104,3 +104,14 @@
     border-left: 4px solid var(--accent);
     transition: transform 0.3s ease;
  }
+
+ .menu-card:hover {
+    transform: translateY(-10px);
+ }
+
+ /* Ordering page Layout  */
+ .order-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+ }
