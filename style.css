@@ -52,3 +52,14 @@
  nav ul li {
     margin-left: 2rem;
  }
+
+ nav a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+ }
+
+ nav a:hover, .active {
+    color: var(--accent)
+ }
