@@ -63,3 +63,10 @@
  nav a:hover, .active {
     color: var(--accent)
  }
+
+ /* Layout Containers  */
+ .container, .order-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 5%;
+ }
