@@ -70,3 +70,21 @@
     margin: 0 auto;
     padding: 2rem 5%;
  }
+
+ /* Hero Section  */
+ .hero {
+    height: 80vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6));
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+ }
+
+ .hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    color: var(--accent);
+ }
