@@ -43,3 +43,12 @@
     letter-spacing: 2px;
     color: var(--accent);
  }
+
+ nav ul {
+    display: flex;
+    list-style: none;
+ }
+
+ nav ul li {
+    margin-left: 2rem;
+ }
