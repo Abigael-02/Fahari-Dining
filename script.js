@@ -100,4 +100,23 @@ function updateCartUI() {
     <span>$${item.price.toFixed(2)}</span>
     </div>
     `).join('');
+
+    // Calculate Total 
+    const total = cart.reduce((sum, item) => sum + item.price, 0);
+    totalPriceSpan.innerText = total.toFixed(2);
+}
+
+// Checkout Form Handling 
+const checkoutForm = document.getElementById('checkout-form');
+if (checkoutForm) {
+    checkoutForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const customerName = document.getElementById('order-feedback');
+
+        if (cart.length === 0) {
+            feedback.style.color = "red";
+            feedback.innerText = "Your cart is empty!";
+            return;
+        }
+    })
 }
