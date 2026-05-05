@@ -118,5 +118,11 @@ if (checkoutForm) {
             feedback.innerText = "Your cart is empty!";
             return;
         }
-    })
+
+        // Final Problem Solution 
+        alert(`Thank you,${customerName}! Your order for Fahari Dining has been placed.`);
+        cart = [];
+        updateCartUI();
+        checkoutForm.reset();
+    });
 }
