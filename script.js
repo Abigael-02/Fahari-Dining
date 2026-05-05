@@ -34,5 +34,31 @@ if (menuForm) {
             price: parseFloat(itemPrice),
             image: itemImage
         };
-    })
+
+        // Saving to localStorage 
+        const currentMenu = JSON.parse(localStorage.getItem('fahariMenu'));
+        currentMenu.push(newItem);
+        localStorage.setItem('fahariMenu', JSON.stringify(currentMenu));
+
+        // Provide Success Feedback 
+        feedback.style.color = 'green';
+        feedback.innerText = '${itemName} has been added to the menu!';
+        menuForm.reset();
+    });
+}
+
+// --- Displaying items and Cart management --- 
+const menuDisplay = document.getElementById('dynamic-menu');
+let cart = [];
+
+// Function to render the menu items 
+function renderMenu() {
+    if (!menuDisplay) return;
+
+    const savedMenu = JSON.parse(localStorage.getItem('fahariMenu'));
+
+    if (savedMenu.length === 0) {
+        menuDisplay.innerHTML = <p>The kitchen is currently preparing.Check back soon!</p>;
+        return;
+    }
 }
