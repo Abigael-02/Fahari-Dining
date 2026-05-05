@@ -191,6 +191,10 @@ select {
   transition: opacity 0,2s;
 }
 
+.add-btn:hover {
+  opacity: 0.9;
+}
+
 /* Responsive Media Queries  */
 @media (max-width: 992px) {
   .order-container {
