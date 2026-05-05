@@ -126,3 +126,6 @@ if (checkoutForm) {
         checkoutForm.reset();
     });
 }
+
+// Initialize menu display on load 
+document.addEventListener('DOMContentLoaded', renderMenu);
