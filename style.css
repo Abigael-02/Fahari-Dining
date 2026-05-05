@@ -1,11 +1,11 @@
 /* root variables for consistent design  */
 :root {
   --primary-bg: #ffffff;
-  --secondary-bg: #f9f9f9;
+  --secondary-bg: #fdfdfd;
   --accent: #b8962e;
-  --text-main: #222222;
-  --text-dim: #666666;
-  --border: #e0e0e0;
+  --text-main: #2d2d2d;
+  --text-dim: #757575;
+  --border: #eeeeee;
   --error: #ff4d4d;
   --success: #2ecc71;
 }
@@ -96,8 +96,8 @@ nav a:hover,
 .menu-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
+  gap: 30px;
+  padding: 20px 0;
 }
 
 .menu-card {
@@ -106,7 +106,8 @@ nav a:hover,
   border-radius: 12px;
   border: 1px solid var(--border);
   overflow: hidden;
-  transition: transform 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .menu-card:hover {
