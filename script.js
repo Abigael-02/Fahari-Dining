@@ -79,5 +79,25 @@ function renderMenu() {
         </div>
       `,
     )
-    .join("");
+    .join('');
+}
+// Cart Functionality 
+function addToCart(name, price) {
+    cart.push({ name, price });
+    updateCartUI();
+}
+
+function updateCartUI() {
+    const cartItemsDiv = document.getElementById('cart-items');
+    const totalPriceSpan = document.getElementById('total-price');
+
+    if (!cartItemsDiv) return;
+
+    // Display each item in the cart 
+    cartItemsDiv.innerHTML = cart.map((item, index) => `
+    <div class="cart-item">
+    <span>${item.name}</span>
+    <span>$${item.price.toFixed(2)}</span>
+    </div>
+    `).join('');
 }
