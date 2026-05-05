@@ -1,10 +1,11 @@
 /* root variables for consistent design  */
 :root {
-  --primary-bg: #1a1a1a;
-  --secondary-bg: #2d2d2d;
-  --accent: #d4af37;
-  --text-main: #ffffff;
-  --text-dim: #b3b3b3;
+  --primary-bg: #ffffff;
+  --secondary-bg: #f9f9f9;
+  --accent: #b8962e;
+  --text-main: #222222;
+  --text-dim: #666666;
+  --border: #e0e0e0;
   --error: #ff4d4d;
   --success: #2ecc71;
 }
@@ -100,15 +101,16 @@ nav a:hover,
 }
 
 .menu-card {
-  background-color: var(--secondary-bg);
-  padding: 1.5rem;
+  background-color: var(--primary-bg);
+  padding: 0;
   border-radius: 12px;
-  border-left: 4px solid var(--accent);
+  border: 1px solid var(--border);
+  overflow: hidden;
   transition: transform 0.3s ease;
 }
 
 .menu-card:hover {
-  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* Ordering page Layout  */
