@@ -79,53 +79,85 @@ function renderMenu() {
         </div>
       `,
     )
-    .join('');
+    .join("");
 }
-// Cart Functionality 
+
+// Function to filter the menu
+function filterMenu(category) {
+  const savedMenu = JSON.parse(localStorage.getItem('fahariMenu')) || [];
+  const displayContainer = document.getElementById('dynamic-menu');
+
+  // Filter logic
+  const filteredItems =
+    category === 'All'
+      ? savedMenu
+      : savedMenu.filter(item => item.category === category);
+
+  // Re-render only filtered items
+    displayContainer.innerHTML = filteredItems
+        .map(item => `
+        <div class="menu-card">
+            <img src="${item.image}" alt="${item.name}" class="menu-image">
+            <div class="card-content">
+                <h3>${item.name}</h3>
+                <span class="price-tag">$${item.price.toFixed(2)}</span>
+                <button onclick="addToCart('${item.name}', ${item.price})" class="add-btn">Add to Order</button>
+            </div>
+        </div>
+    `).join('');
+}
+
+// Cart Functionality
 function addToCart(name, price) {
-    cart.push({ name, price });
-    updateCartUI();
+  cart.push({ name, price });
+  updateCartUI();
 }
 
 function updateCartUI() {
-    const cartItemsDiv = document.getElementById('cart-items');
-    const totalPriceSpan = document.getElementById('total-price');
+    const cartItemsDiv = document.getElementById("cart-items");
+    const totalPriceSpan = document.getElementById("total-price");
 
     if (!cartItemsDiv) return;
 
-    // Display each item in the cart 
-    cartItemsDiv.innerHTML = cart.map((item, index) => `
+    // Display each item in the cart
+    cartItemsDiv.innerHTML = cart
+        .map(
+            (item, index) => `
     <div class="cart-item">
     <span>${item.name}</span>
     <span>$${item.price.toFixed(2)}</span>
     </div>
-    `).join('');
+    `,
+        )
+        .join("");
 
-    // Calculate Total 
-    const total = cart.reduce((sum, item) => sum + item.price, 0);
-    totalPriceSpan.innerText = total.toFixed(2);
+  // Calculate Total
+  const total = cart.reduce((sum, item) => sum + item.price, 0);
+  totalPriceSpan.innerText = total.toFixed(2);
 }
 
-// Checkout Form Handling 
-const checkoutForm = document.getElementById('checkout-form');
+// Checkout Form Handling
+const checkoutForm = document.getElementById("checkout-form");
 if (checkoutForm) {
-    checkoutForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const customerName = document.getElementById('order-feedback');
+  checkoutForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const customerName = document.getElementById("order-feedback");
 
-        if (cart.length === 0) {
-            feedback.style.color = "red";
-            feedback.innerText = "Your cart is empty!";
-            return;
-        }
+    if (cart.length === 0) {
+      feedback.style.color = "red";
+      feedback.innerText = "Your cart is empty!";
+      return;
+    }
 
-        // Final Problem Solution 
-        alert(`Thank you,${customerName}! Your order for Fahari Dining has been placed.`);
-        cart = [];
-        updateCartUI();
-        checkoutForm.reset();
-    });
+    // Final Problem Solution
+    alert(
+      `Thank you,${customerName}! Your order for Fahari Dining has been placed.`,
+    );
+    cart = [];
+    updateCartUI();
+    checkoutForm.reset();
+  });
 }
 
-// Initialize menu display on load 
-document.addEventListener('DOMContentLoaded', renderMenu);
+// Initialize menu display on load
+document.addEventListener("DOMContentLoaded", renderMenu);

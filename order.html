@@ -23,6 +23,13 @@
         <section class="menu-display">
             <h2>Select Your Meals</h2>
             <p>Choose from our freshly made daily specials.</p>
+
+            <div class="category-filters">
+                <button class="filter-btn" onclick="filterMenu('All')">All</button>
+                <button class="filter-btn" onclick="filterMenu('Breakfast')">Breakfast</button>
+                <button class="filter-btn" onclick="filterMenu('Main')">Big Meals</button>
+                <button class="filter-btn" onclick="filterMenu('Drinks')">Perfected Drinks</button>
+            </div>
             <!-- Items injected here from localStorage via script.js -->
              <div id="dynamic-menu" class="menu-grid"></div>
         </section>
