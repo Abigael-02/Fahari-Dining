@@ -126,6 +126,15 @@ nav a:hover,
   color: white;
 }
 
+.features {
+  border-radius: 12px;
+  background-color: #eeeeee;
+  height: fit-content;
+  padding: 2rem;
+  top: 100px;
+  position: sticky;
+}
+
 /* Menu Grid  */
 .menu-grid {
   display: grid;
