@@ -1,45 +1,56 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin-Fahari Dining</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <header>
-        <nav>
-            <div class="logo">FAHARI</div>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="order.html">Order Online</a></li>
-                <li><a href="add-item.html" class="active">Admin</a></li>
-            </ul>
-        </nav>
+      <nav>
+        <div class="logo">FAHARI</div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="order.html">Order Online</a></li>
+          <li><a href="add-item.html" class="active">Admin</a></li>
+        </ul>
+      </nav>
     </header>
 
     <main class="container">
-        <section class="admin-panel">
-            <h2>Add New Menu Item</h2>
-            <form id="menu-form">
-                <input type="text" id="itemName" placeholder="Dish Name" required>
-                <input type="number" id="itemPrice" placeholder="Price (Ksh)" step="0.01" required>
-                <!--Field for photos-->
-                <input type="url" id="itemImg" placeholder="Paste image URL here" required>
+      <section class="admin-panel">
+        <h2>Add New Menu Item</h2>
+        <form id="menu-form">
+          <input type="text" id="itemName" placeholder="Dish Name" required />
+          <input
+            type="number"
+            id="itemPrice"
+            placeholder="Price (Ksh)"
+            step="0.01"
+            required
+          />
+          <!--Field for photos-->
+          <input
+            type="url"
+            id="itemImg"
+            placeholder="Paste image URL here"
+            required
+          />
 
-                <!-- CATEGORY SELECTOR -->
-    <select id="itemCategory" required>
-        <option value="" disabled selected>Select Category</option>
-        <option value="Breakfast">Breakfast</option>
-        <option value="Main">Big Meals</option>
-        <option value="Drinks">Perfected Drinks</option>
-    </select>
-    
-                <button type="submit" class="btn">Add to Live Menu</button>
-            </form>
-            <div id="form-feedback"></div>
-        </section>
+          <!-- CATEGORY SELECTOR -->
+          <select id="itemCategory" required>
+            <option value="" disabled selected>Select Category</option>
+            <option value="Breakfast">Breakfast</option>
+            <option value="Main">Big Meals</option>
+            <option value="Drinks">Perfected Drinks</option>
+          </select>
+
+          <button type="submit" class="btn">Add to Live Menu</button>
+        </form>
+        <div id="form-feedback"></div>
+      </section>
     </main>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
