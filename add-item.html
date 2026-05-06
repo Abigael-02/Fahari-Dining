@@ -25,7 +25,16 @@
                 <input type="text" id="itemName" placeholder="Dish Name" required>
                 <input type="number" id="itemPrice" placeholder="Price (Ksh)" step="0.01" required>
                 <!--Field for photos-->
-                <input type="url" id="itemImg" placeholder="Paste image URL here">
+                <input type="url" id="itemImg" placeholder="Paste image URL here" required>
+
+                <!-- CATEGORY SELECTOR -->
+    <select id="itemCategory" required>
+        <option value="" disabled selected>Select Category</option>
+        <option value="Breakfast">Breakfast</option>
+        <option value="Main">Big Meals</option>
+        <option value="Drinks">Perfected Drinks</option>
+    </select>
+    
                 <button type="submit" class="btn">Add to Live Menu</button>
             </form>
             <div id="form-feedback"></div>
