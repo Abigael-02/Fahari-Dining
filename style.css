@@ -55,7 +55,7 @@ nav ul li {
 }
 
 nav a {
-  color: var(--text-main);
+  color: var(--accent);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
@@ -201,6 +201,7 @@ select {
 .btn {
   background-color: var(--accent);
   color: black;
+  text-decoration: none;
   padding: 0.8rem 2rem;
   border: none;
   border-radius: 4px;
