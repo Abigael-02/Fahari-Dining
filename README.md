@@ -43,6 +43,9 @@ The system uses a strict string-matching algorithm to filter items by category.
 ## Link to GitHub Project
 https://github.com/Abigael-02/Fahari-Dining
 
+## Link to website
+http://localhost:5501/index.html
+
 
 ## Contact
 abigael.kibunja@student.moringaschool.com
