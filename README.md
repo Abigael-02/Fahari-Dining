@@ -28,7 +28,7 @@ Abigael Kibunja
 ### 1. Menu Filtering Logic
 The system uses a strict string-matching algorithm to filter items by category.
 
-### 2. 
+### 2. Cart & Order Management
 
 - **Persistence**: Uses `JSON.parse(localStorage.getItem("cart"))` to retrieve saved items.
 - **Reset Logic**: `localStorage.removeItem("cart")` is triggered upon successful form submission to empty the "Your Order" card.
