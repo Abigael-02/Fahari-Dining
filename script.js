@@ -69,15 +69,11 @@ function renderMenu() {
     menuDisplay.innerHTML = `  
       <p>The kitchen is currently preparing.Check back soon!</p>`;
     return;
-
-    <button onclick="deleteItem(${item.id})" class="delete-btn" style="background: red; color: white; margin-top: 5px;">
-      Delete from Menu
-    </button>
   }
 
- menuDisplay.innerHTML = savedMenu
-   .map
-     (item => `
+  menuDisplay.innerHTML = savedMenu
+    .map(
+      (item) => `
         <div class="menu-card">
             <img src="${item.image}" alt="${item.name}" class="menu-image">
             <div class="card-content">
@@ -86,11 +82,14 @@ function renderMenu() {
                 <button onclick="addToCart('${item.name}', ${item.price})" class="add-btn">
                     Add to Order
                 </button>
+                <button onclick="deleteItem(${item.id})" class="delete-btn" style="background: red; color: white; margin-top: 5px;">
+      Delete from Menu
+    </button>
             </div>
         </div>
     `,
-   )
-   .join("");
+    )
+    .join("");
 }
 
 // Function to filter the menu
@@ -102,7 +101,7 @@ function filterMenu(category) {
   const filteredItems =
     category === "All"
       ? savedMenu
-      : savedMenu.filter(item => item.category === category);
+      : savedMenu.filter((item) => item.category === category);
 
   // Re-render only filtered items
   displayContainer.innerHTML = filteredItems
@@ -178,7 +177,7 @@ document.addEventListener("DOMContentLoaded", renderMenu);
 
 function deleteItem(id) {
   let savedMenu = JSON.parse(localStorage.getItem("fahariMenu")) || [];
-  savedMenu = savedMenu.filter(item => item.id !== id);
+  savedMenu = savedMenu.filter((item) => item.id !== id);
 
   localStorage.setItem("fahariMenu", JSON.stringify(savedMenu));
   renderMenu();
