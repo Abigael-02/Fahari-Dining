@@ -1,64 +1,72 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Order Online | Fahari Dining</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <header>
-        <nav>
-            <div class="logo">FAHARI DINING</div>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="order.html" class="active">Order Online</a></li>
-                <li><a href="add-item.html">Admin</a></li>
-            </ul>
-        </nav>
+      <nav>
+        <div class="logo">FAHARI DINING</div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="order.html" class="active">Order Online</a></li>
+          <li><a href="add-item.html">Admin</a></li>
+        </ul>
+      </nav>
     </header>
 
     <!-- Functional "Problem Solving" section -->
-     <main class="order-container">
-        <section class="menu-display">
-            <h2>Select Your Meals</h2>
-            <p>Choose from our freshly made daily specials.</p>
+    <main class="order-container">
+      <section class="menu-display">
+        <h2>Select Your Meals</h2>
+        <p>Choose from our freshly made daily specials.</p>
 
-            <div class="category-filters">
-                <button class="filter-btn" onclick="filterMenu('All')">All</button>
-                <button class="filter-btn" onclick="filterMenu('Breakfast')">Breakfast</button>
-                <button class="filter-btn" onclick="filterMenu('Big Meals')">Big Meals</button>
-                <button class="filter-btn" onclick="filterMenu('Drinks')">Perfected Drinks</button>
-            </div>
-            <!-- Items injected here from localStorage via script.js -->
-             <div id="dynamic-menu" class="menu-grid"></div>
-        </section>
+        <div class="category-filters">
+          <button class="filter-btn" onclick="filterMenu('All')">All</button>
+          <button class="filter-btn" onclick="filterMenu('Breakfast')">
+            Breakfast
+          </button>
+          <button class="filter-btn" onclick="filterMenu('Big Meals')">
+            Big Meals
+          </button>
+          <button class="filter-btn" onclick="filterMenu('Drinks')">
+            Perfected Drinks
+          </button>
+        </div>
+        <!-- Items injected here from localStorage via script.js -->
+        <div id="dynamic-menu" class="menu-grid"></div>
+      </section>
 
-        <!-- sidebar for cart interaction -->
-         <aside class="cart-section">
-            <h3>Your Order</h3>
-            <div id="cart-items">
-            </div>
-            <div class="cart-total">
-                <strong>Total: Ksh<span id="total-price">0.00</span></strong>
-            </div>
-                
-            <!-- Checkout Form for Orders -->
-             <form id="checkout-form">
-                    <div class="field">
-                    <label for="customerName">Name for Pickup</label>
-                    <input type="text" id="customerName" placeHolder=" Enter your Name" required>
-                  </div>
-                    <button type="submit" class="btn checkout">Place Pickup Order</button>
-                </form>
-                <div id="order-feedback"></div>
-         </aside>
-     </main>
-    
-     <footer>
-        © 2026 | Fahari Dining
-     </footer>
+      <!-- sidebar for cart interaction -->
+      <aside class="cart-section">
+        <h3>Your Order</h3>
+        <div id="cart-items"></div>
+        <div class="cart-total">
+          <strong>Total: Ksh<span id="total-price">0.00</span></strong>
+        </div>
 
-     <script src="script.js"></script>
-</body>
+        <!-- Checkout Form for Orders -->
+        <form id="checkout-form">
+          <div class="field">
+            <label for="customerName">Name for Pickup</label>
+            <input
+              type="text"
+              id="customerName"
+              placeholder=" Enter your Name"
+              required
+            />
+          </div>
+          <button type="submit" class="btn checkout">Place Pickup Order</button>
+        </form>
+        <div id="order-feedback"></div>
+      </aside>
+    </main>
+
+    <footer>© 2026 | Fahari Dining</footer>
+
+    <script src="script.js"></script>
+  </body>
 </html>

@@ -7,8 +7,6 @@ if (!localStorage.getItem("fahariMenu")) {
   localStorage.setItem("fahariMenu", JSON.stringify([]));
 }
 
-
-
 // --- ADMIN LOGIC: Adding items to the system
 const menuForm = document.getElementById("menu-form");
 // Event Listener for form submission
@@ -94,14 +92,16 @@ function renderMenu() {
 }
 // Function to filter the menu
 function renderFilteredMenu(menuToDisplay, selectedCategory) {
-    if (!menuDisplay) return;
+  if (!menuDisplay) return;
 
-    if (menuToDisplay.length === 0) {
-        menuDisplay.innerHTML = `<p class="no-items">The kitchen has no ${selectedCategory} right now. Check back soon!</p>`;
-        return;
-    }
+  if (menuToDisplay.length === 0) {
+    menuDisplay.innerHTML = `<p class="no-items">The kitchen has no ${selectedCategory} right now. Check back soon!</p>`;
+    return;
+  }
 
-    menuDisplay.innerHTML = menuToDisplay.map(item => `
+  menuDisplay.innerHTML = menuToDisplay
+    .map(
+      (item) => `
         <div class="menu-card">
             <img src="${item.image}" alt="${item.name}" class="menu-image">
             <div class="card-content">
@@ -112,7 +112,9 @@ function renderFilteredMenu(menuToDisplay, selectedCategory) {
                 </button>
             </div>
         </div>
-    `).join("");
+    `,
+    )
+    .join("");
 }
 function filterMenu(category) {
   const savedMenu = JSON.parse(localStorage.getItem("fahariMenu")) || [];
@@ -121,7 +123,7 @@ function filterMenu(category) {
   const filteredItems =
     category === "All"
       ? savedMenu
-      : savedMenu.filter(item => item.category === category);
+      : savedMenu.filter((item) => item.category === category);
 
   renderFilteredMenu(filteredItems, category);
 }
@@ -158,7 +160,7 @@ function updateCartUI() {
 // Checkout Form Handling
 const checkoutForm = document.getElementById("checkout-form");
 if (checkoutForm) {
-  checkoutForm.addEventListener("submit", function(event)  {
+  checkoutForm.addEventListener("submit", function (event) {
     event.preventDefault();
     const customerName = document.getElementById("customerName").value;
     localStorage.removeItem("cart");
@@ -193,7 +195,7 @@ const heroContainer = document.querySelector(".hero-container");
 
 function showNextSlide() {
   currentIndex++;
-  
+
   if (currentIndex >= slides.length) {
     currentIndex = 0;
   }
