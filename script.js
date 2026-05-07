@@ -63,31 +63,34 @@ let cart = [];
 function renderMenu() {
   if (!menuDisplay) return;
 
-  const savedMenu = JSON.parse(localStorage.getItem("fahariMenu"));
+  const savedMenu = JSON.parse(localStorage.getItem("fahariMenu")) || [];
 
   if (savedMenu.length === 0) {
-    menuDisplay.innerHTML = (
-      <p>The kitchen is currently preparing.Check back soon!</p>
-    );
+    menuDisplay.innerHTML = `  
+      <p>The kitchen is currently preparing.Check back soon!</p>`;
     return;
+
+    <button onclick="deleteItem(${item.id})" class="delete-btn" style="background: red; color: white; margin-top: 5px;">
+      Delete from Menu
+    </button>
   }
 
-  menuDisplay.innerHTML = savedMenu
-    .map(
-      (item) => ` 
+ menuDisplay.innerHTML = savedMenu
+   .map
+     (item => `
         <div class="menu-card">
-    <img src="${item.image}" alt="${item.name}" class="menu-image">
+            <img src="${item.image}" alt="${item.name}" class="menu-image">
             <div class="card-content">
                 <h3>${item.name}</h3>
-                <span class="price-tag">Ksh ${item.price}</span>
-                <button onclick="addToCart('$item.name}', ${item.price}" class="add-btn">
-                   Add to Order 
+                <span class="price-tag">Ksh ${item.price.toFixed(2)}</span>
+                <button onclick="addToCart('${item.name}', ${item.price})" class="add-btn">
+                    Add to Order
                 </button>
-            </div>      
+            </div>
         </div>
-      `,
-    )
-    .join("");
+    `,
+   )
+   .join("");
 }
 
 // Function to filter the menu
@@ -99,7 +102,7 @@ function filterMenu(category) {
   const filteredItems =
     category === "All"
       ? savedMenu
-      : savedMenu.filter((item) => item.category === category);
+      : savedMenu.filter(item => item.category === category);
 
   // Re-render only filtered items
   displayContainer.innerHTML = filteredItems
@@ -172,3 +175,11 @@ if (checkoutForm) {
 
 // Initialize menu display on load
 document.addEventListener("DOMContentLoaded", renderMenu);
+
+function deleteItem(id) {
+  let savedMenu = JSON.parse(localStorage.getItem("fahariMenu")) || [];
+  savedMenu = savedMenu.filter(item => item.id !== id);
+
+  localStorage.setItem("fahariMenu", JSON.stringify(savedMenu));
+  renderMenu();
+}
