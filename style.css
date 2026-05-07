@@ -151,6 +151,28 @@ nav a:hover,
   color: var(--accent);
 }
 
+.category-container {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 40px 0;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background-color: #ffffff;
+  color: #2d2d2d;
+  border: 12px solid #2d2d2d;
+  padding: 12px 28px;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
 /* Menu Grid  */
 .menu-grid {
   display: grid;

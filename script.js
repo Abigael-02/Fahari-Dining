@@ -31,6 +31,8 @@ if (menuForm) {
     }
 
     // Create the new item object
+    const itemCategory = document.getElementById("itemCategory").value;
+
     const newItem = {
       id: Date.now(),
       name: itemName,
@@ -90,33 +92,38 @@ function renderMenu() {
     )
     .join("");
 }
-
 // Function to filter the menu
+function renderFilteredMenu(menuToDisplay, selectedCategory) {
+    if (!menuDisplay) return;
+
+    if (menuToDisplay.length === 0) {
+        menuDisplay.innerHTML = `<p class="no-items">The kitchen has no ${selectedCategory} right now. Check back soon!</p>`;
+        return;
+    }
+
+    menuDisplay.innerHTML = menuToDisplay.map(item => `
+        <div class="menu-card">
+            <img src="${item.image}" alt="${item.name}" class="menu-image">
+            <div class="card-content">
+                <h3>${item.name}</h3>
+                <span class="price-tag">Ksh ${item.price.toFixed(2)}</span>
+                <button onclick="addToCart('${item.name}', ${item.price})" class="add-btn">
+                    Add to Order
+                </button>
+            </div>
+        </div>
+    `).join("");
+}
 function filterMenu(category) {
   const savedMenu = JSON.parse(localStorage.getItem("fahariMenu")) || [];
-  const displayContainer = document.getElementById("dynamic-menu");
 
   // Filter logic
   const filteredItems =
     category === "All"
       ? savedMenu
-      : savedMenu.filter((item) => item.category === category);
+      : savedMenu.filter(item => item.category === category);
 
-  // Re-render only filtered items
-  displayContainer.innerHTML = filteredItems
-    .map(
-      (item) => `
-        <div class="menu-card">
-            <img src="${item.image}" alt="${item.name}" class="menu-image">
-            <div class="card-content">
-                <h3>${item.name}</h3>
-                <span class="price-tag">$${item.price.toFixed(2)}</span>
-                <button onclick="addToCart('${item.name}', ${item.price})" class="add-btn">Add to Order</button>
-            </div>
-        </div>
-    `,
-    )
-    .join("");
+  renderFilteredMenu(filteredItems, category);
 }
 
 // Cart Functionality
@@ -153,7 +160,7 @@ const checkoutForm = document.getElementById("checkout-form");
 if (checkoutForm) {
   checkoutForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    const customerName = document.getElementById("order-feedback");
+    const customerName = document.getElementById("customer-name").value;
 
     if (cart.length === 0) {
       feedback.style.color = "red";
