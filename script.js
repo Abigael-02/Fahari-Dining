@@ -207,3 +207,5 @@ document.addEventListener("DOMContentLoaded", () => {
     setInterval(showNextSlide, 3000);
   }
 });
+
+renderMenu();
