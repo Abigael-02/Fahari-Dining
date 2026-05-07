@@ -96,6 +96,18 @@ nav a:hover,
   height: 60vh;
   overflow:hidden;
   position: relative;
+  width: 100%;
+  display: flex;
+}
+
+.hero-slide {
+  min-width: 100%;
+  object-fit: cover;
+}
+
+.hero-container {
+  display: flex;
+  width: 100%;
 }
 
 .slider-track {
@@ -192,6 +204,7 @@ nav a:hover,
 
 .cart-section {
   background-color: #000;
+  color: white;
   padding: 2rem;
   border-radius: 12px;
   height: fit-content;

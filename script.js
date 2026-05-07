@@ -7,6 +7,8 @@ if (!localStorage.getItem("fahariMenu")) {
   localStorage.setItem("fahariMenu", JSON.stringify([]));
 }
 
+
+
 // --- ADMIN LOGIC: Adding items to the system
 const menuForm = document.getElementById("menu-form");
 // Event Listener for form submission
@@ -82,9 +84,6 @@ function renderMenu() {
                 <button onclick="addToCart('${item.name}', ${item.price})" class="add-btn">
                     Add to Order
                 </button>
-                <button onclick="deleteItem(${item.id})" class="delete-btn" style="background: red; color: white; margin-top: 5px;">
-      Delete from Menu
-    </button>
             </div>
         </div>
     `,
@@ -175,10 +174,23 @@ if (checkoutForm) {
 // Initialize menu display on load
 document.addEventListener("DOMContentLoaded", renderMenu);
 
-function deleteItem(id) {
-  let savedMenu = JSON.parse(localStorage.getItem("fahariMenu")) || [];
-  savedMenu = savedMenu.filter((item) => item.id !== id);
+let currentIndex = 0;
+const slides = document.querySelectorAll(".hero-slide");
+const heroContainer = document.querySelector(".hero-container");
 
-  localStorage.setItem("fahariMenu", JSON.stringify(savedMenu));
-  renderMenu();
+function showNextSlide() {
+  currentIndex++;
+  
+  if (currentIndex >= slides.length) {
+    currentIndex = 0;
+  }
+  const offset = -currentIndex * 100;
+  heroContainer.style.transform = `translateX(${offset}%)`;
+  heroContainer.style.transition = "transform 0.8s ease-in-out";
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  if (slides.length > 0) {
+    setInterval(showNextSlide, 3000);
+  }
+});
