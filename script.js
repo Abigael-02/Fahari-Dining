@@ -17,7 +17,8 @@ if (menuForm) {
     // Capture User Input
     const itemName = document.getElementById("itemName").value;
     const itemPrice = document.getElementById("itemPrice").value;
-    const itemImage = document.getElementById("itemImage").value;
+    const itemImage = document.getElementById("itemImg").value;
+    const category = document.getElementById("itemCategory").value;
     const feedback = document.getElementById("form-feedback");
 
     // Form Validation
@@ -33,12 +34,19 @@ if (menuForm) {
       name: itemName,
       price: parseFloat(itemPrice),
       image: itemImage,
+      category: itemCategory,
     };
 
     // Saving to localStorage
-    const currentMenu = JSON.parse(localStorage.getItem("fahariMenu"));
-    currentMenu.push(newItem);
-    localStorage.setItem("fahariMenu", JSON.stringify(currentMenu));
+    try {
+      const currentMenu = JSON.parse(localStorage.getItem("fahariMenu")) || [];
+      currentMenu.push(newItem);
+      localStorage.setItem("fahariMenu", JSON.stringify(currentMenu));
+      console.log("Everything worked!");
+    } catch (error) {
+      console.error("Something went wrong with the storage", error);
+      alert("We couldn't save your item");
+    }
 
     // Provide Success Feedback
     feedback.style.color = "green";
@@ -67,11 +75,11 @@ function renderMenu() {
   menuDisplay.innerHTML = savedMenu
     .map(
       (item) => ` 
-        <div div class="menu-card">
+        <div class="menu-card">
     <img src="${item.image}" alt="${item.name}" class="menu-image">
             <div class="card-content">
                 <h3>${item.name}</h3>
-                <span class="price-tag">$${item.price.toFixed(2)}</span>
+                <span class="price-tag">Ksh ${item.price}</span>
                 <button onclick="addToCart('$item.name}', ${item.price}" class="add-btn">
                    Add to Order 
                 </button>
@@ -84,18 +92,19 @@ function renderMenu() {
 
 // Function to filter the menu
 function filterMenu(category) {
-  const savedMenu = JSON.parse(localStorage.getItem('fahariMenu')) || [];
-  const displayContainer = document.getElementById('dynamic-menu');
+  const savedMenu = JSON.parse(localStorage.getItem("fahariMenu")) || [];
+  const displayContainer = document.getElementById("dynamic-menu");
 
   // Filter logic
   const filteredItems =
-    category === 'All'
+    category === "All"
       ? savedMenu
-      : savedMenu.filter(item => item.category === category);
+      : savedMenu.filter((item) => item.category === category);
 
   // Re-render only filtered items
-    displayContainer.innerHTML = filteredItems
-        .map(item => `
+  displayContainer.innerHTML = filteredItems
+    .map(
+      (item) => `
         <div class="menu-card">
             <img src="${item.image}" alt="${item.name}" class="menu-image">
             <div class="card-content">
@@ -104,7 +113,9 @@ function filterMenu(category) {
                 <button onclick="addToCart('${item.name}', ${item.price})" class="add-btn">Add to Order</button>
             </div>
         </div>
-    `).join('');
+    `,
+    )
+    .join("");
 }
 
 // Cart Functionality
@@ -114,22 +125,22 @@ function addToCart(name, price) {
 }
 
 function updateCartUI() {
-    const cartItemsDiv = document.getElementById("cart-items");
-    const totalPriceSpan = document.getElementById("total-price");
+  const cartItemsDiv = document.getElementById("cart-items");
+  const totalPriceSpan = document.getElementById("total-price");
 
-    if (!cartItemsDiv) return;
+  if (!cartItemsDiv) return;
 
-    // Display each item in the cart
-    cartItemsDiv.innerHTML = cart
-        .map(
-            (item, index) => `
+  // Display each item in the cart
+  cartItemsDiv.innerHTML = cart
+    .map(
+      (item, index) => `
     <div class="cart-item">
     <span>${item.name}</span>
     <span>$${item.price.toFixed(2)}</span>
     </div>
     `,
-        )
-        .join("");
+    )
+    .join("");
 
   // Calculate Total
   const total = cart.reduce((sum, item) => sum + item.price, 0);
