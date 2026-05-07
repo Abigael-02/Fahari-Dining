@@ -7,152 +7,151 @@
 // This is the "Safety Net" for GitHub users
 const defaultData = [
   
-    {
-      id: 1778154809826,
-      name: "Pancakes",
-      price: 500,
-      image:
-        "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGZvb2R8ZW58MHx8MHx8fDA%3D",
-      category: "Breakfast",
-    },
-    {
-      id: 1778157317026,
-      name: "Breakfast Combo",
-      price: 1500,
-      image:
-        "https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGZvb2R8ZW58MHx8MHx8fDA%3D",
-      category: "Breakfast",
-    },
-    {
-      id: 1778157476897,
-      name: "Fruit Salad",
-      price: 600,
-      image:
-        "https://images.unsplash.com/photo-1687877465643-b0cab75e9ecb?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGZvb2QlMjBicmVha2Zhc3R8ZW58MHx8MHx8fDA%3D",
-      category: "Breakfast",
-    },
-    {
-      id: 1778158158627,
-      name: "Croissants",
-      price: 300,
-      image:
-        "https://images.unsplash.com/photo-1618667060775-1fe102237f94?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGZvb2QlMjBicmVha2Zhc3R8ZW58MHx8MHx8fDA%3D",
-      category: "Breakfast",
-    },
-    {
-      id: 1778158266177,
-      name: "Marinated Salmon",
-      price: 1000,
-      image:
-        "https://images.unsplash.com/photo-1574484284002-952d92456975?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bWVhbHxlbnwwfHwwfHx8MA%3D%3D",
-      category: "Big Meals",
-    },
-    {
-      id: 1778158335788,
-      name: "Salad Combo",
-      price: 2000,
-      image:
-        "https://images.unsplash.com/photo-1600335895229-6e75511892c8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG1lYWx8ZW58MHx8MHx8fDA%3D",
-      category: "Big Meals",
-    },
-    {
-      id: 1778158493836,
-      name: "Spaghetti Bolognese",
-      price: 1400,
-      image:
-        "https://plus.unsplash.com/premium_photo-1677000666741-17c3c57139a2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZGlubmVyfGVufDB8fDB8fHww",
-      category: "Big Meals",
-    },
-    {
-      id: 1778158652335,
-      name: "Peri Peri Chicken Pizza",
-      price: 900,
-      image:
-        "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cGl6emF8ZW58MHx8MHx8fDA%3D",
-      category: "Big Meals",
-    },
-    {
-      id: 1778158791834,
-      name: "Tropical Juice",
-      price: 450,
-      image:
-        "https://images.unsplash.com/photo-1633932934464-5420d4bc89e6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fGRyaW5rc3xlbnwwfHwwfHx8MA%3D%3D",
-      category: "Drinks",
-    },
-    {
-      id: 1778158874142,
-      name: "Orange Juice",
-      price: 400,
-      image:
-        "https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjZ8fGRyaW5rc3xlbnwwfHwwfHx8MA%3D%3D",
-      category: "Drinks",
-    },
-    {
-      id: 1778158983755,
-      name: "Strawberry Lemonade",
-      price: 450,
-      image:
-        "https://images.unsplash.com/photo-1633933329823-0c2677e2d8c6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzN8fGRyaW5rc3xlbnwwfHwwfHx8MA%3D%3D",
-      category: "Drinks",
-    },
-    {
-      id: 1778159062770,
-      name: "Passion Juice",
-      price: 300,
-      image:
-        "https://images.unsplash.com/photo-1529729452430-d35a0213b820?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTAxfHxkcmlua3N8ZW58MHx8MHx8fDA%3D",
-      category: "Drinks",
-    },
-    {
-      id: 1778168954438,
-      name: "Blueberry Toast",
-      price: 300,
-      image:
-        "https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Zm9vZHxlbnwwfHwwfHx8MA%3D%3D",
-      category: "Breakfast",
-    },
-    {
-      id: 1778173893554,
-      name: "Yoghurt Bowl",
-      price: 500,
-      image:
-        "https://images.unsplash.com/photo-1627308594190-a057cd4bfac8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjh8fHNtb290aGllfGVufDB8fDB8fHww",
-      category: "Breakfast",
-    },
-    {
-      id: 1778174008191,
-      name: "Banana Smoothie",
-      price: 400,
-      image:
-        "https://images.unsplash.com/photo-1653542773369-51cce8d08250?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTB8fHNtb290aGllfGVufDB8fDB8fHww",
-      category: "Drinks",
-    },
-    {
-      id: 1778174162251,
-      name: "Chocolate Milkshake",
-      price: 450,
-      image:
-        "https://images.unsplash.com/photo-1619158403521-ed9795026d47?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bWlsa3NoYWtlfGVufDB8fDB8fHww",
-      category: "Drinks",
-    },
-    {
-      id: 1778174560744,
-      name: "Roasted Steak with Fries",
-      price: 1500,
-      image:
-        "https://images.unsplash.com/photo-1600891964092-4316c288032e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c3RlYWt8ZW58MHx8MHx8fDA%3D",
-      category: "Big Meals",
-    },
-    {
-      id: 1778174990435,
-      name: "Tacos",
-      price: 300,
-      image:
-        "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dGFjb3N8ZW58MHx8MHx8fDA%3D",
-      category: "Big Meals",
-    },
-  ],
-;
+  {
+    id: 1778154809826,
+    name: "Pancakes",
+    price: 500,
+    image:
+      "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGZvb2R8ZW58MHx8MHx8fDA%3D",
+    category: "Breakfast",
+  },
+  {
+    id: 1778157317026,
+    name: "Breakfast Combo",
+    price: 1500,
+    image:
+      "https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGZvb2R8ZW58MHx8MHx8fDA%3D",
+    category: "Breakfast",
+  },
+  {
+    id: 1778157476897,
+    name: "Fruit Salad",
+    price: 600,
+    image:
+      "https://images.unsplash.com/photo-1687877465643-b0cab75e9ecb?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGZvb2QlMjBicmVha2Zhc3R8ZW58MHx8MHx8fDA%3D",
+    category: "Breakfast",
+  },
+  {
+    id: 1778158158627,
+    name: "Croissants",
+    price: 300,
+    image:
+      "https://images.unsplash.com/photo-1618667060775-1fe102237f94?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGZvb2QlMjBicmVha2Zhc3R8ZW58MHx8MHx8fDA%3D",
+    category: "Breakfast",
+  },
+  {
+    id: 1778158266177,
+    name: "Marinated Salmon",
+    price: 1000,
+    image:
+      "https://images.unsplash.com/photo-1574484284002-952d92456975?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bWVhbHxlbnwwfHwwfHx8MA%3D%3D",
+    category: "Big Meals",
+  },
+  {
+    id: 1778158335788,
+    name: "Salad Combo",
+    price: 2000,
+    image:
+      "https://images.unsplash.com/photo-1600335895229-6e75511892c8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG1lYWx8ZW58MHx8MHx8fDA%3D",
+    category: "Big Meals",
+  },
+  {
+    id: 1778158493836,
+    name: "Spaghetti Bolognese",
+    price: 1400,
+    image:
+      "https://plus.unsplash.com/premium_photo-1677000666741-17c3c57139a2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZGlubmVyfGVufDB8fDB8fHww",
+    category: "Big Meals",
+  },
+  {
+    id: 1778158652335,
+    name: "Peri Peri Chicken Pizza",
+    price: 900,
+    image:
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cGl6emF8ZW58MHx8MHx8fDA%3D",
+    category: "Big Meals",
+  },
+  {
+    id: 1778158791834,
+    name: "Tropical Juice",
+    price: 450,
+    image:
+      "https://images.unsplash.com/photo-1633932934464-5420d4bc89e6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fGRyaW5rc3xlbnwwfHwwfHx8MA%3D%3D",
+    category: "Drinks",
+  },
+  {
+    id: 1778158874142,
+    name: "Orange Juice",
+    price: 400,
+    image:
+      "https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjZ8fGRyaW5rc3xlbnwwfHwwfHx8MA%3D%3D",
+    category: "Drinks",
+  },
+  {
+    id: 1778158983755,
+    name: "Strawberry Lemonade",
+    price: 450,
+    image:
+      "https://images.unsplash.com/photo-1633933329823-0c2677e2d8c6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzN8fGRyaW5rc3xlbnwwfHwwfHx8MA%3D%3D",
+    category: "Drinks",
+  },
+  {
+    id: 1778159062770,
+    name: "Passion Juice",
+    price: 300,
+    image:
+      "https://images.unsplash.com/photo-1529729452430-d35a0213b820?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTAxfHxkcmlua3N8ZW58MHx8MHx8fDA%3D",
+    category: "Drinks",
+  },
+  {
+    id: 1778168954438,
+    name: "Blueberry Toast",
+    price: 300,
+    image:
+      "https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Zm9vZHxlbnwwfHwwfHx8MA%3D%3D",
+    category: "Breakfast",
+  },
+  {
+    id: 1778173893554,
+    name: "Yoghurt Bowl",
+    price: 500,
+    image:
+      "https://images.unsplash.com/photo-1627308594190-a057cd4bfac8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjh8fHNtb290aGllfGVufDB8fDB8fHww",
+    category: "Breakfast",
+  },
+  {
+    id: 1778174008191,
+    name: "Banana Smoothie",
+    price: 400,
+    image:
+      "https://images.unsplash.com/photo-1653542773369-51cce8d08250?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTB8fHNtb290aGllfGVufDB8fDB8fHww",
+    category: "Drinks",
+  },
+  {
+    id: 1778174162251,
+    name: "Chocolate Milkshake",
+    price: 450,
+    image:
+      "https://images.unsplash.com/photo-1619158403521-ed9795026d47?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bWlsa3NoYWtlfGVufDB8fDB8fHww",
+    category: "Drinks",
+  },
+  {
+    id: 1778174560744,
+    name: "Roasted Steak with Fries",
+    price: 1500,
+    image:
+      "https://images.unsplash.com/photo-1600891964092-4316c288032e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c3RlYWt8ZW58MHx8MHx8fDA%3D",
+    category: "Big Meals",
+  },
+  {
+    id: 1778174990435,
+    name: "Tacos",
+    price: 300,
+    image:
+      "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dGFjb3N8ZW58MHx8MHx8fDA%3D",
+    category: "Big Meals"
+  }
+];
 
 let menu = JSON.parse(localStorage.getItem("fahariMenu"));
 
