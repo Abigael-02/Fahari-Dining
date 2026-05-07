@@ -82,7 +82,7 @@ function renderMenu() {
             <img src="${item.image}" alt="${item.name}" class="menu-image">
             <div class="card-content">
                 <h3>${item.name}</h3>
-                <span class="price-tag">Ksh ${item.price.toFixed(2)}</span>
+                <span class="price-tag">Ksh${item.price.toFixed(2)}</span>
                 <button onclick="addToCart('${item.name}', ${item.price})" class="add-btn">
                     Add to Order
                 </button>
@@ -144,7 +144,7 @@ function updateCartUI() {
       (item, index) => `
     <div class="cart-item">
     <span>${item.name}</span>
-    <span>$${item.price.toFixed(2)}</span>
+    <span>Ksh${item.price.toFixed(2)}</span>
     </div>
     `,
     )
@@ -158,22 +158,28 @@ function updateCartUI() {
 // Checkout Form Handling
 const checkoutForm = document.getElementById("checkout-form");
 if (checkoutForm) {
-  checkoutForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const customerName = document.getElementById("customer-name").value;
+  checkoutForm.addEventListener("submit", function(event)  {
+    event.preventDefault();
+    const customerName = document.getElementById("customerName").value;
+    localStorage.removeItem("cart");
+    checkoutForm.reset();
 
     if (cart.length === 0) {
+      const feedback = document.getElementById("order-feedback");
       feedback.style.color = "red";
       feedback.innerText = "Your cart is empty!";
       return;
     }
 
+    localStorage.removeItem("cart");
+    cart = [];
+    if (typeof renderCart === "function") renderCart();
+    if (typeof updateCartUI === "function") updateCartUI();
+
     // Final Problem Solution
     alert(
       `Thank you,${customerName}! Your order for Fahari Dining has been placed.`,
     );
-    cart = [];
-    updateCartUI();
     checkoutForm.reset();
   });
 }
